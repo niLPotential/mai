@@ -17,6 +17,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Slider } from "@/components/ui/slider";
+import { Switch } from "@/components/ui/switch";
 import {
   Select,
   SelectTrigger,
@@ -30,6 +31,7 @@ const formSchema = z.object({
   length: z.coerce.number().positive().int().max(60),
   bpm: z.coerce.number().positive().int().array().length(1),
   genre: z.string(),
+  instruments: z.boolean(),
 });
 
 export default function Page() {
@@ -40,6 +42,7 @@ export default function Page() {
       length: 30,
       bpm: [160],
       genre: "",
+      instruments: false,
     },
   });
 
@@ -58,6 +61,8 @@ export default function Page() {
               <FormLabel>Theme</FormLabel>
               <FormControl>
                 <Textarea
+                  required
+                  className="resize-none"
                   placeholder="Enter prompts to generate music"
                   {...field}
                 />
@@ -74,7 +79,13 @@ export default function Page() {
             <FormItem>
               <FormLabel>Length</FormLabel>
               <FormControl>
-                <Input type="number" placeholder="30" {...field} />
+                <Input
+                  type="number"
+                  placeholder="30"
+                  min={0}
+                  max={60}
+                  {...field}
+                />
               </FormControl>
               <FormDescription>music length</FormDescription>
               <FormMessage />
@@ -95,7 +106,7 @@ export default function Page() {
                   defaultValue={field.value}
                 />
               </FormControl>
-              <FormDescription>bpm</FormDescription>
+              <FormDescription>{field.value} bpm</FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -106,7 +117,11 @@ export default function Page() {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Genre</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <Select
+                onValueChange={field.onChange}
+                defaultValue={field.value}
+                required
+              >
                 <FormControl>
                   <SelectTrigger>
                     <SelectValue placeholder="Select a genre" />
@@ -118,6 +133,21 @@ export default function Page() {
                   <SelectItem value="jazz">Jazz</SelectItem>
                 </SelectContent>
               </Select>
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="instruments"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Instruments</FormLabel>
+              <FormControl>
+                <Switch
+                  checked={field.value}
+                  onCheckedChange={field.onChange}
+                />
+              </FormControl>
             </FormItem>
           )}
         />

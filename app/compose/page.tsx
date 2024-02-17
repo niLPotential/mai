@@ -82,12 +82,12 @@ export default function Page() {
                 <Input
                   type="number"
                   placeholder="30"
-                  min={0}
+                  min={1}
                   max={60}
                   {...field}
                 />
               </FormControl>
-              <FormDescription>music length</FormDescription>
+              <FormDescription>music length: {field.value}s</FormDescription>
               <FormMessage />
             </FormItem>
           )}

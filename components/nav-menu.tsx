@@ -10,8 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-
-const components = [];
+import { ModeToggle } from "@/components/mode-toggle";
 
 export function NavMenu() {
   return (
@@ -53,6 +52,9 @@ export function NavMenu() {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink href="/login">Sign In</NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <ModeToggle />
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

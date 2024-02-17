@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
-import { ModeToggle } from "@/components/mode-toggle";
 import { NavMenu } from "@/components/nav-menu";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -28,8 +27,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <NavMenu />
-          <ModeToggle />
-
           {children}
         </ThemeProvider>
       </body>

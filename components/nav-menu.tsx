@@ -48,6 +48,12 @@ export function NavMenu() {
         <NavigationMenuItem>
           <NavigationMenuLink href="/about">About</NavigationMenuLink>
         </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink href="/account">Account</NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink href="/login">Sign In</NavigationMenuLink>
+        </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   );

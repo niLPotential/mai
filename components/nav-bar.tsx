@@ -17,7 +17,7 @@ export function NavBar() {
       <Separator orientation="vertical" />
       <Link href="/shop">Market</Link>
       <Separator orientation="vertical" />
-      <Link href="/account">My Page</Link>
+      <Link href="/login">My Page</Link>
       <Separator orientation="vertical" />
       <Link href="/contact">Contact</Link>
       <Separator orientation="vertical" />

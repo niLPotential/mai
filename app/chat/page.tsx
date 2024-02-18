@@ -73,7 +73,7 @@ export default function Page() {
 
   return (
     <>
-      <Card>
+      <Card className="md:w-1/2">
         <CardHeader className="flex-row items-center justify-between">
           <div className="flex">
             <CornerDownLeft />
@@ -114,7 +114,7 @@ export default function Page() {
               ]);
               setInput("");
             }}
-            className="flex w-full items-center"
+            className="flex w-full items-center space-x-2"
           >
             <Input
               id="message"

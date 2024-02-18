@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import {
   Card,
   CardContent,
@@ -25,7 +27,9 @@ export default function Home() {
           </p>
         </CardContent>
         <CardFooter className="flex justify-center">
-          <Button>Start Now</Button>
+          <Button>
+            <Link href="/chat">Start Now</Link>
+          </Button>
         </CardFooter>
       </Card>
     </div>

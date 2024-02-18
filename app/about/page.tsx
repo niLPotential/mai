@@ -1,35 +1,73 @@
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
 export default async function Page() {
   return (
-    <div className="flex flex-1 flex-col p-10">
-      <h1 className=" py-6 text-4xl">About MAI</h1>
-      <p className="py-3 text-xl">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus
-        turpis sed lacus finibus, vitae vulputate lectus molestie. Ut eget neque
-        eget libero scelerisque pulvinar nec ac lorem. Integer in vestibulum
-        nisi. Donec et accumsan augue. Pellentesque finibus ante vestibulum,
-        vehicula purus ut, pellentesque mi. Nam id arcu lobortis, eleifend risus
-        at, aliquam sem. Nullam posuere ex massa, condimentum hendrerit tortor
-        iaculis quis. Donec interdum est non interdum mattis.
-      </p>
-      <p className="py-3 text-xl">
-        Duis auctor elit sit amet lobortis tristique. Aliquam id risus ut sem
-        pellentesque ullamcorper non quis erat. Ut sagittis hendrerit dui vel
-        pulvinar. Nulla sit amet finibus ligula. Sed aliquet mauris ante, quis
-        pharetra libero faucibus eu. Sed et ultrices massa. Suspendisse nibh
-        justo, rutrum vel leo sed, malesuada porta risus. Curabitur vestibulum
-        arcu nec metus tristique tristique. Nunc in risus ut nulla sagittis
-        fringilla. Nam at odio nec eros faucibus aliquet. Sed sit amet lacus
-        turpis. Nunc ultricies purus nunc, nec tincidunt lectus iaculis sed.
-      </p>
-      <p className="py-3 text-xl">
-        Morbi accumsan, risus at convallis dapibus, lacus odio ultrices mi, in
-        auctor lorem felis sit amet mauris. In molestie ullamcorper quam at
-        molestie. Mauris malesuada, enim quis congue congue, lacus urna pharetra
-        est, sed tincidunt lacus arcu nec arcu. Vivamus malesuada bibendum
-        augue, a mollis sem lobortis eu. Aliquam erat volutpat. Aliquam
-        tincidunt lorem non turpis ultrices eleifend. Ut at est in nisi tempus
-        cursus. Nullam iaculis massa a maximus porta.
-      </p>
+    <div className="flex flex-1 flex-col items-center justify-center p-5 md:w-1/2">
+      <Carousel className="text-center">
+        <CarouselContent>
+          <CarouselItem>
+            <Card>
+              <CardHeader>
+                <CardTitle>We reach out to our customers endlessly</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>
+                  Our company will always strive to provide the most complete
+                  music and convenience for our customers.
+                </p>
+              </CardContent>
+            </Card>
+          </CarouselItem>
+          <CarouselItem>
+            <Card>
+              <CardHeader>
+                <CardTitle>Create the music you want in a minute</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>
+                  Once you&apos;ve created your music with AI, work with a
+                  professional composerfor fine-tuning and refinement.
+                </p>
+              </CardContent>
+            </Card>
+          </CarouselItem>
+          <CarouselItem>
+            <Card>
+              <CardHeader>
+                <CardTitle>Working with Compositors and Details</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>
+                  Once you&apos;ve created your music with AI, work with a
+                  professional composer for fine-tuning and refinement.
+                </p>
+              </CardContent>
+            </Card>
+          </CarouselItem>
+          <CarouselItem>
+            <Card>
+              <CardHeader>
+                <CardTitle>Detailed Options Features</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>
+                  We analyze your tastes, situation, and needs to create the
+                  perfect soundtrack
+                </p>
+              </CardContent>
+            </Card>
+          </CarouselItem>
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </div>
   );
 }

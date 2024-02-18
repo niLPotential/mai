@@ -7,11 +7,11 @@ import Link from "next/link";
 
 export function NavBar() {
   return (
-    <div className="my-5 flex h-5 justify-center gap-5">
+    <div className="flex h-16 justify-center gap-5 p-5">
       <Separator orientation="vertical" />
       <Link href="/">Home</Link>
       <Separator orientation="vertical" />
-      <Link href="/compose">Make Music</Link>
+      <Link href="/chat">Make Music</Link>
       <Separator orientation="vertical" />
       <Link href="/about">About</Link>
       <Separator orientation="vertical" />

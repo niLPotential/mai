@@ -12,7 +12,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 export default function Page() {
   return (
-    <div className="flex flex-1 flex-col items-center justify-center">
+    <>
       <Card>
         <CardHeader className="items-center">
           <Avatar>
@@ -43,6 +43,6 @@ export default function Page() {
           <Button form="login">LOGIN</Button>
         </CardFooter>
       </Card>
-    </div>
+    </>
   );
 }

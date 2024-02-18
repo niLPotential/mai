@@ -1,44 +1,48 @@
 import { Input } from "@/components/ui/input";
 import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 export default function Page() {
   return (
-    <div className="flex flex-1 flex-col items-center">
-      <form className="flex max-w-80 flex-col items-center justify-center gap-3 rounded p-5 ring ring-ring">
-        <Input type="email" name="email" placeholder="Email" required />
-        <Input
-          type="password"
-          name="password"
-          placeholder="Password"
-          required
-        />
-        <AlertDialog>
-          <AlertDialogTrigger type="submit">Sign In</AlertDialogTrigger>
-          <AlertDialogContent>
-            <AlertDialogHeader>
-              <AlertDialogTitle>This is currently in demo</AlertDialogTitle>
-              <AlertDialogDescription>
-                This site is a demo project. Signing in is currently not
-                supported.
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogFooter>
-              <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction>Continue</AlertDialogAction>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialog>
-      </form>
+    <div className="flex flex-1 flex-col items-center justify-center">
+      <Card>
+        <CardHeader className="items-center">
+          <Avatar>
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+        </CardHeader>
+        <CardContent>
+          <form id="login" className="flex flex-col gap-5">
+            <Input type="email" name="email" placeholder="Email ID" required />
+            <Input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+            <div className="flex gap-5">
+              <div className="flex items-center gap-1">
+                <Checkbox id="remember-me" />
+                <label htmlFor="remember-me">Remember Me</label>
+              </div>
+              <div>
+                <Link href="/password-reset">Forgot Password?</Link>
+              </div>
+            </div>
+          </form>
+        </CardContent>
+        <CardFooter className="justify-center">
+          <Button form="login">LOGIN</Button>
+        </CardFooter>
+      </Card>
     </div>
   );
 }

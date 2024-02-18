@@ -58,7 +58,7 @@ export default function Page() {
   }
 
   return (
-    <div className="p-10">
+    <>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
@@ -162,6 +162,6 @@ export default function Page() {
           <Button type="submit">Submit</Button>
         </form>
       </Form>
-    </div>
+    </>
   );
 }

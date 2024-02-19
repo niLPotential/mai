@@ -1,3 +1,9 @@
+import Image from "next/image";
+import About_1 from "/public/about_1.png";
+import About_2 from "/public/about_2.png";
+import About_3 from "/public/about_3.png";
+import About_4 from "/public/about_4.png";
+
 import {
   Carousel,
   CarouselContent,
@@ -17,11 +23,12 @@ export default async function Page() {
               <CardHeader>
                 <CardTitle>We reach out to our customers endlessly</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p>
+              <CardContent className="relative">
+                <p className="absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] text-xl text-accent">
                   Our company will always strive to provide the most complete
                   music and convenience for our customers.
                 </p>
+                <Image src={About_1} alt="Picture of people discussing" />
               </CardContent>
             </Card>
           </CarouselItem>
@@ -30,8 +37,9 @@ export default async function Page() {
               <CardHeader>
                 <CardTitle>Create the music you want in a minute</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p>
+              <CardContent className="relative">
+                <Image src={About_2} alt="Picture of AI bot" />
+                <p className="absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] text-xl text-accent">
                   Once you&apos;ve created your music with AI, work with a
                   professional composerfor fine-tuning and refinement.
                 </p>
@@ -43,8 +51,12 @@ export default async function Page() {
               <CardHeader>
                 <CardTitle>Working with Compositors and Details</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p>
+              <CardContent className="relative">
+                <Image
+                  src={About_3}
+                  alt="Picture of a woman working on music"
+                />
+                <p className="translate-y-[-50% absolute left-1/2 top-1/2 translate-x-[-50%] text-xl text-accent">
                   Once you&apos;ve created your music with AI, work with a
                   professional composer for fine-tuning and refinement.
                 </p>
@@ -56,8 +68,9 @@ export default async function Page() {
               <CardHeader>
                 <CardTitle>Detailed Options Features</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p>
+              <CardContent className="relative">
+                <Image src={About_4} alt="Picture of a music workstation" />
+                <p className="absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] text-xl text-accent">
                   We analyze your tastes, situation, and needs to create the
                   perfect soundtrack
                 </p>

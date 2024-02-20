@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="relative flex min-h-full max-w-screen-md flex-col items-center justify-center">
+        <div className="relative left-1/2 flex min-h-full max-w-screen-md translate-x-[-50%] flex-col items-center justify-center">
           <NavBar />
           <div className="flex flex-1 flex-col items-center justify-center">
             {children}

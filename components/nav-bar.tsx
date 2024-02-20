@@ -2,13 +2,17 @@
 
 import React from "react";
 
-import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
+import Image from "next/image";
+import LogoShort from "/public/logo_short.png";
+
+import { Separator } from "@/components/ui/separator";
 
 export function NavBar() {
   return (
-    <div className="flex h-16 justify-center gap-5 p-5">
+    <div className="flex h-16 justify-center gap-2 p-5 text-xl">
       <Separator orientation="vertical" />
+      <Image src={LogoShort} alt="MAI Logo" height={25} />
       <Link href="/">Home</Link>
       <Separator orientation="vertical" />
       <Link href="/chat">Make Music</Link>

@@ -77,7 +77,7 @@ export default function Page() {
   return (
     <div className="flex flex-col items-center gap-5">
       <Image src={LogoLong} alt="M:AI Music" width={500} />
-      <Card className="md:w-1/2">
+      <Card className="max-w-[80%]">
         <CardHeader className="flex-row items-center justify-between">
           <div className="flex items-center gap-3">
             <CornerDownLeft />
@@ -107,7 +107,7 @@ export default function Page() {
 
                 <div
                   className={cn(
-                    "flex w-max max-w-[75%] items-center rounded-lg px-3 py-2 align-middle text-sm",
+                    "flex max-w-[75%] items-center rounded-lg px-3 py-2 align-middle text-sm",
                     message.role === "user"
                       ? "bg-primary text-primary-foreground"
                       : "bg-muted",

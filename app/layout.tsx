@@ -29,7 +29,7 @@ export default function RootLayout({
           </div>
           <Image
             src={Background}
-            alt="Image of AI generating music"
+            alt="background image"
             className="absolute -z-20"
           />
         </div>

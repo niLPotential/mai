@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { CornerDownLeft, MoreVertical, Send } from "lucide-react";
+import { CornerDownLeft, MoreVertical, Send, Bot } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+import Image from "next/image";
+import LogoLong from "/public/logo_long.png";
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
@@ -63,7 +66,7 @@ export default function Page() {
       },
       {
         role: "user",
-        content: "안개가 자욱하지만 그안에 작은 빛이 나오는 듯한 느낌",
+        content: "안개가 자욱하지만 그 안에 작은 빛이 나오는 듯한 느낌",
       },
     ],
   );
@@ -72,10 +75,11 @@ export default function Page() {
   const inputLength = input.trim().length;
 
   return (
-    <>
+    <div className="flex flex-col items-center gap-5">
+      <Image src={LogoLong} alt="M:AI Music" width={500} />
       <Card className="md:w-1/2">
         <CardHeader className="flex-row items-center justify-between">
-          <div className="flex">
+          <div className="flex items-center gap-3">
             <CornerDownLeft />
             <Avatar>
               <AvatarFallback>U</AvatarFallback>
@@ -89,13 +93,28 @@ export default function Page() {
               <div
                 key={index}
                 className={cn(
-                  "flex w-max max-w-[75%] flex-col gap-2 rounded-lg px-3 py-2 text-sm",
-                  message.role === "user"
-                    ? "ml-auto bg-primary text-primary-foreground"
-                    : "bg-muted",
+                  "flex gap-2",
+                  message.role === "user" ? "flex-row-reverse" : "flex-row",
                 )}
               >
-                {message.content}
+                {message.role === "user" ? (
+                  <Avatar>
+                    <AvatarFallback>U</AvatarFallback>
+                  </Avatar>
+                ) : (
+                  <Bot size={36} />
+                )}
+
+                <div
+                  className={cn(
+                    "flex w-max max-w-[75%] items-center rounded-lg px-3 py-2 align-middle text-sm",
+                    message.role === "user"
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-muted",
+                  )}
+                >
+                  {message.content}
+                </div>
               </div>
             ))}
           </div>
@@ -129,6 +148,6 @@ export default function Page() {
           </form>
         </CardFooter>
       </Card>
-    </>
+    </div>
   );
 }

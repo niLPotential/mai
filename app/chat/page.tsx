@@ -75,8 +75,13 @@ export default function Page() {
   const inputLength = input.trim().length;
 
   return (
-    <div className="flex flex-col items-center gap-5">
-      <Image src={LogoLong} alt="M:AI Music" width={500} />
+    <div className="flex flex-col items-center">
+      <Image
+        src={LogoLong}
+        alt="M:AI Music"
+        width={500}
+        className="mb-8 mt-5"
+      />
       <Card className="max-w-[80%]">
         <CardHeader className="flex-row items-center justify-between">
           <div className="flex items-center gap-3">

@@ -8,7 +8,7 @@ import {
 
 export default function Page() {
   return (
-    <div className="flex flex-col justify-center gap-5">
+    <div className="mt-4 flex flex-col justify-center gap-5">
       <Card>
         <CardHeader>
           <CardTitle>사운드 디자이너 (기본)</CardTitle>
